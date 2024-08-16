@@ -26,7 +26,7 @@ function CreateBook() {
     }
 
     axios
-    .post('http://localhost:5000/api/v1/book', createBookRequest)
+    .post('https://testfinal-chqc.onrender.com/api/v1/book', createBookRequest)
     .then((res) => {
       let book = res.data.BookAdded
       console.log(book)

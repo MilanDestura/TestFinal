@@ -9,7 +9,7 @@ function BookList() {
   
     useEffect(() => {
       axios
-        .get('http://localhost:5000/api/v1/book')
+        .get('https://testfinal-chqc.onrender.com/api/v1/book')
         .then((res) => {
           setBooks(res.data);
         })
@@ -20,7 +20,7 @@ function BookList() {
 
     function getAllBooks(){
       axios
-      .get('http://localhost:5000/api/v1/book')
+      .get('https://testfinal-chqc.onrender.com/api/v1/book')
       .then((res) => {
         setBooks(res.data);
       })
@@ -33,7 +33,7 @@ function BookList() {
       console.log(id)
 
       axios
-      .delete('http://localhost:5000/api/v1/book/'+id)
+      .delete('https://testfinal-chqc.onrender.com/api/v1/book/'+id)
       .then((res) => {
         getAllBooks()
         console.log(res.data)
