@@ -12,13 +12,13 @@ router.route('/').get((req, res) => {
 
 // craete new
 router.route("/").post(async (req, res) => {
-    const title = req.body.title;
-    const author = req.body.author;
+    const bookTitle = req.body.bookTitle;
+    const bookAuthor = req.body.bookAuthor;
     const description = req.body.description;
    
     const newBook = new BookModel.Book({
-        title,
-        author,
+        bookTitle,
+        bookAuthor,
         description
     });
 

@@ -12,9 +12,9 @@ function BookCard(props) {
       />
       <div className="desc">
         <h2>
-          <a href="/show-book/123id">{props.book.title}</a>
+          <a href="/show-book/123id">{props.book.bookTitle}</a>
         </h2>
-        <h3>{props.book.author}</h3>
+        <h3>{props.book.bookAuthor}</h3>
         <p>{props.book.description}     <input type="button"  value="X"     onClick={()=> props.deleteBook()}
 /></p>
       </div>

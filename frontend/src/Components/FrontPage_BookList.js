@@ -9,7 +9,7 @@ function BookList() {
   
     useEffect(() => {
       axios
-        .get('/v1/')
+        .get('http://localhost:5000/api/v1/book')
         .then((res) => {
           setBooks(res.data);
         })
@@ -20,7 +20,7 @@ function BookList() {
 
     function getAllBooks(){
       axios
-      .get('/v1/')
+      .get('http://localhost:5000/api/v1/book')
       .then((res) => {
         setBooks(res.data);
       })
@@ -33,7 +33,7 @@ function BookList() {
       console.log(id)
 
       axios
-      .delete('/v1/'+id)
+      .delete('http://localhost:5000/api/v1/book/'+id)
       .then((res) => {
         getAllBooks()
         console.log(res.data)
@@ -64,7 +64,7 @@ function BookList() {
                 <div className='col-md-11'>
                   <Link
                     to='/create-book'
-                    className='btn btn-outline-warning float-right'
+                    className='btn btn-info'
                   >
                     + Add New Book
                   </Link>

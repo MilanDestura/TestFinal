@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const BookSchema = mongoose.Schema({
-    title: {
+    bookTitle: {
         type: String,
         required: true
     },
-    author:{
+    bookAuthor:{
         type: String,
         required: true
     },

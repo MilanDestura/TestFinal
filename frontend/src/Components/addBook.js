@@ -5,8 +5,8 @@ import "./style.css"
 
 
 function CreateBook() {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
+  const [bookTitle, setTitle] = useState("");
+  const [bookAuthor, setAuthor] = useState("");
   const [description, setDescription] = useState("");
   const [message, setMessage] = useState("");
 
@@ -15,18 +15,18 @@ function CreateBook() {
   }, []);
 
   function createBook() {
-    console.log(title);
-    console.log(author);
+    console.log(bookTitle);
+    console.log(bookAuthor);
     console.log(description);
 
     const createBookRequest = { 
-      "title" : title,
-      "author": author,
+      "bookTitle" : bookTitle,
+      "bookAuthor": bookAuthor,
       "description": description
     }
 
     axios
-    .post('/v1/', createBookRequest)
+    .post('http://localhost:5000/api/v1/book', createBookRequest)
     .then((res) => {
       let book = res.data.BookAdded
       console.log(book)
@@ -59,7 +59,7 @@ function CreateBook() {
                   placeholder="Title of the Book"
                   name="title"
                   className="form-control"
-                  value={title}
+                  value={bookTitle}
                   onChange={(e) => setTitle(e.target.value)}
                   spellCheck={false}
                   data-ms-editor="true"
@@ -72,7 +72,7 @@ function CreateBook() {
                   placeholder="Author"
                   name="author"
                   className="form-control"
-                  value={author}
+                  value={bookAuthor}
                   onChange={(e) => setAuthor(e.target.value)}
                   spellCheck={false}
                   data-ms-editor="true"
